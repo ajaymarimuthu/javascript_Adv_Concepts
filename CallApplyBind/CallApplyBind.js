@@ -32,7 +32,7 @@ var myfunc= function (arg1, arg2){
 
 // ----------Real Example for Call---------------------------------- 
 
-
+ 
 var emp1={
     basePay:1000,
     variablePay:1000,
@@ -45,20 +45,42 @@ var emp2={
 
 
 
-var salaryFun= function(){
-
-
-    // Here "this" will be dynamic .whatever context we passing it takes that context's value 
-
+var salaryFun= function(arg1,arg2){
+     // Here "this" will be dynamic .whatever context we passing it takes that context's value 
      var res= this.basePay+this.variablePay;
 
-     console.log(res);
-   
+     var args=arg1+arg2;
+ 
+     console.log("salary",res);        
+     console.log("args",args)
 }
 
-salaryFun.call(emp1);
-salaryFun.call(emp2);
+
+// For call Method 
+// Params: 1- Context,  2- params
+
+// salaryFun.call(emp1);
+// salaryFun.call(emp2);
+// salaryFun.call(emp2,10,10);
+
+// ---------------------- Apply Method ---------------------- 
+
+// For Apply Method 
+// Params: 1- Context,  2- Array of params
+
+// salaryFun.apply(emp1,[10,20])
 
 
+
+
+
+// ---------------------- Bind Method ---------------------- 
+// Bind returns the entire function , it wont immediatley execute the function
+
+
+const rwe=salaryFun.bind(emp1);
+// Above line binding the context  and it returns funciton
+rwe(100,100)
+// in above function reference we are passing the args 
 
 
