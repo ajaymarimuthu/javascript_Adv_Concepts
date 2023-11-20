@@ -80,7 +80,8 @@ var salaryFun= function(arg1,arg2){
 
 const rwe=salaryFun.bind(emp1);
 // Above line binding the context  and it returns funciton
-rwe(100,100)
+// rwe(100,100)
 // in above function reference we are passing the args 
+
 
 

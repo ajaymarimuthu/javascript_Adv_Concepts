@@ -65,12 +65,27 @@ var filterResult=filterArr.myFilter((i)=>{
 let reduceArr=[100,200,300,400,500];
 
 
-Array.prototype.myReduce=function(cb){
+Array.prototype.myReduce=function(cb,initialValue){
+
+  if(typeof cb !== 'function'){
+    console.log("lskdmf");
+    return;
+  }
+    
+
+    let acc;
+    let i;
+
+    if(initialValue === undefined || initialValue === null){
+        acc=this[0];
+        i=1;
+    }
+    else{
+        acc=initialValue;
+    }
 
 
-    let acc= this[0];
-
-    for(let i=1;i<this.length;i++){
+    for(i;i<this.length;i++){
         acc=cb(acc,this[i]);
         
     }
@@ -86,4 +101,22 @@ Array.prototype.myReduce=function(cb){
 var reduceResult=reduceArr.myReduce((acc,curr)=>{
     return acc+curr
 })
-console.log(reduceResult);
+// console.log(reduceResult);
+
+var varName=10;
+
+function b(){
+    console.log("in bb",varName);
+}
+
+function c(){
+    var varName=20;
+    b();
+    console.log(varName);
+}
+
+
+// c();
+
+
+
