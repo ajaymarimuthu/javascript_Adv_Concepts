@@ -67,6 +67,47 @@ Function.prototype.customBind = function (obj) {
 
 // -------------------------------------------- 
 
+// =-----------------Shallow Copy =-------------------
+
+const sObj1={
+    a:10,
+    b:20,
+}
+
+// Methods to create shallow copy 
+
+var sObj2={...sObj1} // this will give shallow copy
+
+var sObj2=Object.assign({},sObj2)// this will also give shallow copy
+
+// console.log(sObj2); 
+
+
+const sObjArr1={
+    a:10,
+    b:20,
+    c:[1,2,3]
+}
+
+const sObjArr2={...sObjArr1}
+
+
+sObjArr2.a=5555;
+sObjArr2.c.push(333); 
+// Here we are updating a array , it reflects in sObjArr1 also, its wrong 
+// In top level it is fine but in inner level , in our case its array  , change is affecting innerlevel (array )
+//To overcome below deepcpy is used
+// var sObjArr2=JSON.parse(JSON.stringify(sObjArr1))// this line will create deep copy of sObjArr1. 
+
+
+
+
+// console.log("sObjArr1",sObjArr1);
+// console.log("sObjArr2",sObjArr2);
+
+
+
+
 
 // =-----------------Deep clone =-------------------
 
@@ -88,10 +129,80 @@ const obj3={
 
 }
 
-console.log("with funciton of obj3",obj3);
+// console.log("with funciton of obj3",obj3);
 
 const obj4= JSON.parse(JSON.stringify(obj3));
 
-console.log("without funciton of obj3",obj4);
+// console.log("without funciton of obj3",obj4);
+
+
+
+// To OVercome this problem we need to write Polyfill of Deep Clone 
+
+
+
+
+// -------------------Polyfill of DeepCLone------------------------------------
+
+
+
+
+const deepObj={
+    a:10,
+    b:25,
+    c:{ 
+        coo:10,        
+
+        d:{
+            doo:10,
+
+            e:{
+                doo:10,
+            }
+        }
+     },
+     d:[1,2,3,[4,5,6]],
+
+     sayHi:function(){
+        console.log("Hiii");
+     }
+}
+
+
+// Complete  Deep clone example for an object  
+function deepClone(obj){
+
+    if(typeof obj === 'number'||
+       typeof obj === 'string' ||
+       typeof obj === 'boolean' ||
+       typeof obj ==='function'
+    ){
+        return obj;
+    }
+    else if(Array.isArray(obj)){
+        return obj.map(val=>deepClone(val))
+    }
+    else{
+        return Object.keys(obj).reduce((acc,key)=>{ 
+
+            acc[key] = deepClone(obj[key])
+            return acc;
+    
+         },{})
+   
+    }  
+    
+}
+
+
+// const deep1= JSON.parse(JSON.stringify(deepObj))
+// console.log(deep1);
+
+
+const res=  deepClone(deepObj);
+
+
+// console.log(res);
+
 
 
