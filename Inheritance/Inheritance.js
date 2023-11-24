@@ -1,5 +1,4 @@
-
-
+ 
 const species=Object.create({
     type:"species",
     speak:function(){
@@ -28,14 +27,19 @@ bird.fly=function(){
 
 for(let key in bird){
     // console.log(key);  // return all the keys in object from BOTTOM to TOP
+
+    
+
+// enumerable is false in for loop while iterating object  : check in PropertyObjectDescriptors
+
 }
 
 
 
 // IMportant thing in proto---------- 
 
-console.log(Object.keys(bird.__proto__)); // will give animal object
+// console.log(Object.keys(bird.__proto__)); // will give animal object
 
-console.log(Object.keys(bird.__proto__.__proto__));  // it will gve empty array because speices dont have any properties
+// console.log(Object.keys(bird.__proto__.__proto__));  // it will gve empty array because speices dont have any properties
 
 
