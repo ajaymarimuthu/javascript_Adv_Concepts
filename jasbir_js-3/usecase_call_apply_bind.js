@@ -69,38 +69,43 @@
 
 
 
-// const arr=[1,2,3,4,5,67];
-
-// console.log('resss', ...arr);
+const arr=[1,2,3,4,5,67];
 
 
+arr.prop="Iam a property";
+arr.method = function (){
+    console.log("inside arr method");
+    return "returning from array";
+}
+
+console.log('resss', arr);
 
 // ### Bind method 
 // /***** used to bind a function to `this`.
 
 
-let cap = {
-    name:'setve',
-    sayHi:function(avg1,avg2 , ...collectionParams){
-        console.log('Hey',avg1,avg2 , ...collectionParams);
-        console.log('------',collectionParams);
-        console.log('Hi from ',this.name );
-    }
-}
-let ironman = {
-    name:'TonyStark',
+// let cap = {
+//     name:'setve',
+//     sayHi:function(avg1,avg2 , ...collectionParams){
+//         console.log('Hey',avg1,avg2 , ...collectionParams);
+//         console.log('------',collectionParams);
+//         console.log('Hi from ',this.name );
+//     }
+// }
+// let ironman = {
+//     name:'TonyStark',
      
-}
+// }
 
 
-cap.sayHi.bind(ironman); // this line will be a copied of SayHi method. It always have ironman object as its `this`
+// cap.sayHi.bind(ironman); // this line will be a copied of SayHi method. It always have ironman object as its `this`
 
 //  with the help of BIND method , we can actually control what will be the value of this inside the function.
 
-let bindToIronManFunction = cap.sayHi.bind(ironman);
+// let bindToIronManFunction = cap.sayHi.bind(ironman);
 
-console.log('bindToIronManFunction',bindToIronManFunction);
+// console.log('bindToIronManFunction',bindToIronManFunction);
 
-bindToIronManFunction('AJay','Vijay','kkkk','ooooo');
+// bindToIronManFunction('AJay','Vijay','kkkk','ooooo');
 
 
