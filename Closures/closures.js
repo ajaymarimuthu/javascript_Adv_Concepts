@@ -5,6 +5,8 @@ var n="ajay";
 
 function greet(){
     console.log("hello",n);
+
+    
 }
 
 n="scaler"

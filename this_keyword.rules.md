@@ -5,6 +5,27 @@
 ## RULES
 
 
+### EXECUTION CONTEXT":
+### Every E.c contains  variable + this+ outer scrope + global E.c
+
+
+
+### HOISTING
+
+whenever E>C created Hoisitng happens.
+Two phase 
+1.) memory allocation  phase .. duign this phase when varibles accessed then undefined / REference error for let variables (Let & const  variables are in temporal dead zone)
+2.) code execution phase
+
+
+Var declarations are hoisted and initialized as undefined.
+Let and const declarations are hoisted but not initialized, leading to a temporal dead zone (TDZ).
+Function declarations are fully hoisted, but function expressions are hoisted as variables
+
+
+
+***********************************************************************************
+
 * this is determined on run time
 * this is always determined when the E.C is created.
 
