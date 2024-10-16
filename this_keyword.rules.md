@@ -2,11 +2,23 @@
 
 
 #### REPO OF jASBIR : github.com/Jasbir96/Full_stack_Oct
+### https://github.com/Jasbir96/Full_stack_Oct/tree/master
 ## RULES
 
 
 ### EXECUTION CONTEXT":
 ### Every E.c contains  variable + this+ outer scrope + global E.c
+
+
+
+### Is JAVASCRIPT IS SIngle threaded?
+Js is single threaded and Synchoronous language.
+because w.r.t to Javascript it doesn't know that async taks is executed parallely .
+
+
+### Is NODE.JS IS SIngle threaded? Yes
+Hot is is able to execute async tasks ? because off its asychronous architecure that involves event loop, callback queue and webApi's .
+
 
 
 

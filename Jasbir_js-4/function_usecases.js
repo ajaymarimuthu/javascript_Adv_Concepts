@@ -189,7 +189,7 @@ function smallFun(){
 
     for(let i=idx;i<this.length;i++) {
         acc = cb(acc,this[i]);
-    };
+    };thi
     return acc;
 
  }
