@@ -1,12 +1,8 @@
 // ---------------clousre-------------
 
-
 var n="ajay";
-
 function greet(){
-    console.log("hello",n);
-
-    
+    console.log("hello",n);    
 }
 
 n="scaler"
@@ -49,11 +45,11 @@ function ofun(){
 const inner=ofun();
 const inner2=ofun();
 
-// console.log(inner()); //1 
-// console.log(inner()); //2
-
-// console.log(inner2()); //1 
-// console.log(inner2()); //2
+console.log(inner()); //1 
+console.log(inner());    //2
+// 
+console.log(inner2()); //1 
+console.log(inner2()); //2
 
 
 
@@ -85,18 +81,18 @@ const counter=(function(){
 })()
 
 
-console.log(counter.displayOutput());
-counter.incrementFunc();
-counter.incrementFunc();
-counter.incrementFunc();
+// console.log(counter.displayOutput());
+// counter.incrementFunc();
+// counter.incrementFunc();
+// counter.incrementFunc();
 
-console.log(counter.displayOutput());
+// console.log(counter.displayOutput());
 
-counter.decrementFunc();
+// counter.decrementFunc();
  
 
 
-console.log(counter.displayOutput());
+// console.log(counter.displayOutput());
 
 
 // In this changeValueFunc is acting like closure because it is defined in inner fucntion of all public methods

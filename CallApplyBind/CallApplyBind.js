@@ -82,6 +82,60 @@ const rwe=salaryFun.bind(emp1);
 // Above line binding the context  and it returns funciton
 // rwe(100,100)
 // in above function reference we are passing the args 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+-----------------------------AKSHAY SAINI-------------------------------------------------
+
+CALL METHOD:::::::
+let obj1 = {
+    firstName:'ajay',
+    lastName:'Mari',
+    printName:function(){
+        console.log(this.firstName+""+this.lastName);
+    }
+}
+
+obj1.printName();
+
+let obj2 = {
+    firstName: 'Vijay',
+    lastName:'Mari'
+}
+
+obj1.printName.call(obj2)
+
+
+Call method is method useed for fucntion borrowing in JS . Here we are taking printName fucntion from object1 and placing it inside obj2 .
+
+
+
+
+-----------------------------AKSHAY SAINI-------------------------------------------------
+
+
+
+let obj1 = {
+    firstName:'ajay',
+    lastName:'Mari',
+    printName:function(...rest){
+        console.log(this.firstName+""+this.lastName+" "+ rest.join());
+    }
+}
+
+// obj1.printName();
+
+let obj2 = {
+    firstName: 'Vijay',
+    lastName:'Mari'
+}
+
+const res = obj1.printName.bind(obj2,1,2);
+res();
+
+
+
 
 
 
