@@ -42,11 +42,13 @@ const strArr = ["Ajay", "vijay", "cj"];
 // const res = arr.push(20);
 // modidifes old arr and add element at the end  and retusn new length
 
+// const res = arr.pop(20);
+// modidifes old arr and remeove element at the end  and return the removed element
+
+
 // const res = arr.unshift(20);
 // modidifes old arr and add element at the begining  and retusn new length
 
-// const res = arr.pop(20);
-// modidifes old arr and remeove element at the end  and return the removed element
 
 // const res = arr.shift(1);
 // modidifes old arr and remove element at the begining  and retusn the element
